@@ -18,6 +18,7 @@ let gameView = new GameView();
 // gameView.updateBoard(game);
 
 let tiles =  document.querySelectorAll(".board-tile");
+
 tiles.forEach((tile) =>{
     tile.addEventListener("click", ()=> {
         onTileClick(tile.dataset.index);
@@ -28,8 +29,6 @@ function onTileClick(i){
     //do something
     // make a move
     game.makeMove(i);
-    // change turn
-
     // update board
     gameView.updateBoard(game);
     game.nextTurn();
