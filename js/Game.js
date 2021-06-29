@@ -16,13 +16,18 @@ export default class Game{
     }
 
     makeMove(i){
+
+        if(this.endOfGame()){
+            return;
+        }
         if(this.board[i]){
             return;
         }
         this.board[i] = this.turn;
         let winningCombination = this.findWinningCombinations();
+        // console.log("This is winner:",winningCombination)
         if(!winningCombination){
-            
+            this.nextTurn();
         }
     }
 
@@ -46,6 +51,16 @@ export default class Game{
                 return combination;
             }
             
+        }
+        return null;
+    }
+    endOfGame(){
+        let winningCombination = this.findWinningCombinations();
+        if(winningCombination){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 

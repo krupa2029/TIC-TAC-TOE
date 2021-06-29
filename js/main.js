@@ -31,6 +31,6 @@ function onTileClick(i){
     game.makeMove(i);
     // update board
     gameView.updateBoard(game);
-    game.nextTurn();
+    
 
 }
