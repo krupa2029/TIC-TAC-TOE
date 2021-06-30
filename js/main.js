@@ -3,8 +3,10 @@ import GameView from "./GameView.js"
 
 let game = new Game();
 let gameView = new GameView();
-// gameView.updateBoard(game);
 
+document.querySelector(".restart").addEventListener("click", ()=>{
+    onRestartClick();
+})
 
 // console.log(game.board);
 // console.log("My turn:", game.turn);
@@ -33,4 +35,9 @@ function onTileClick(i){
     gameView.updateBoard(game);
     
 
+}
+
+function onRestartClick(){
+    game = new Game();
+    gameView.updateBoard(game);
 }
