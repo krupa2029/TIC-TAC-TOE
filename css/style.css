@@ -6,17 +6,21 @@
 body{
     font-family: sans-serif;
     color: #4c6986;
+    background-color: black;
 }
 
+.title{
+    max-width: 500px;
+}
 .wrapper{
 
     max-width: 1440px;
-    height: 800px;
-    background-color: black;
+    height: 800px; 
     display: flex;
     align-items:center;
-    justify-content: center;
+    justify-content:space-between;
     margin: 0 auto;
+    padding: 40px;
 }
 
 h1{
@@ -62,10 +66,19 @@ h1{
     border-bottom: 5px solid #eee;
     padding-bottom: 8px;
 }
+.player-x.active{
+    color: rgb(255, 0, 76);
+    border-color: rgb(255, 0, 76);
+}
+
 .header .player-o{
     flex: 1;
     border-bottom: 5px solid #eee;
     padding-bottom: 8px;
+}
+.player-o.active{
+    color: blue;
+    border-color: blue;
 }
 
 .board{
@@ -95,4 +108,25 @@ h1{
 
 .board-tile:hover{
     background-color: #eeeeee;
+}
+
+.tile-x{
+    color: rgb(255, 0, 76);
+}
+.tile-o{
+    color: blue;
+}
+
+.tile-winner span{
+    color: greenyellow;
+}
+
+@media only screen and (max-width: 1200px){
+    .wrapper{
+        flex-direction: column;
+    }
+
+    .left{
+        margin-bottom: 40px;
+    }
 }

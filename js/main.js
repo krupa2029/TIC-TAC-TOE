@@ -34,10 +34,11 @@ function onTileClick(i){
     // update board
     gameView.updateBoard(game);
     
-
 }
 
 function onRestartClick(){
     game = new Game();
     gameView.updateBoard(game);
 }
+
+gameView.updateBoard(game);
